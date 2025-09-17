@@ -33,7 +33,7 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
-<body class="bg-gray-100 text-gray-800 font-roboto">
+<body class="bg-white text-black font-roboto">
   <!-- Header -->
  <header class="bg-white shadow flex justify-between items-center px-6 py-4 fixed top-0 left-0 right-0 z-50">
 
@@ -48,34 +48,48 @@
   </header>
 
   <!-- Main Content -->
- <main class="max-w-[90%] mx-auto pt-24 pb-8" id="pdf-content">
+ <main class="max-w-[80%] mx-auto pt-24 pb-8" id="pdf-content">
 
    <!-- Heading -->
 <div class="flex flex-col md:flex-row md:items-center justify-between mb-8">
-  <h2 class=" mb-4 md:mb-0 text-sm">
-    <span class="text-2xl font-bold text-[#EC7200]">Hey Anmol,</span> <br> Here is your personalized report. Toggle between <span class="font-bold text-[#1d1d34]">"Competency View and Detailed View"</span>  to dive deeper.
-  </h2>
 
   <!-- Toggle -->
-<div class="relative flex bg-gray-200 rounded-full p-1  shadow w-[250px] h-[40px]">
+  <div class="flex border-b border-gray-300">
+    <button id="CompetencyBtn" onclick="switchView('competency')" 
+      class="tab-btn px-4 py-2 text-sm font-semibold border-b-2 border-[#EC7200] text-[#EC7200]">
+      Competency View
+    </button>
+    <button id="DetailedBtn" onclick="switchView('detailed')" 
+      class="tab-btn px-4 py-2 text-sm font-semibold text-gray-600 hover:text-[#EC7200] border-b-2 border-transparent">
+      Detailed View
+    </button>
+    <button id="DevelopmentPagebtn" onclick="switchView('development')" 
+      class="tab-btn px-4 py-2 text-sm font-semibold text-gray-600 hover:text-[#EC7200] border-b-2 border-transparent">
+      Development View
+    </button>
+  </div>
 
-  <!-- Sliding background -->
-  <div id="view-slider" class="absolute top-1 left-1 bg-[#EC7200] text-[#ffffff] rounded-full shadow transition-all duration-300 h-[33px] w-1/2"></div>
-
-  <!-- Buttons -->
-  <button id="CompetencyBtn" onclick="switchView('competency')" class="relative  flex flex-1 px-2 py-1 text-xs justify-center items-center rounded-full text-white font-bold z-10">
-    Competency View
-  </button>
-  <button id="DetailedBtn" onclick="switchView('detailed')" class="relative flex flex-1 px-2 py-1 text-xs justify-center items-center rounded-full text-black font-bold z-10">
-    Detailed View
-  </button>
 </div>
 
-</div>
  <div id="competency-view">
+  <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+        <h3 class="text-2xl text-[#1d1d34] font-bold mb-4 text-left">OVERALL SUMMARY</h3>
+        <p class="text-sm text-black mb-2">
+          You are <span class="font-bold text-black">demonstrating a high level of proficiency across key marketing competencies</span> and are operating at an advanced level in many areas. This reflects your ability to apply advanced marketing practices effectively, contribute to broader strategic discussions, and support ABC Pharma’s business objectives. You are also well positioned to guide others and share your expertise to enhance team capabilities.
+        </p>
+        <p class="text-sm text-black mb-2">
+         Your ratings suggest that you are not just executing tasks effectively, but also shaping the strategic direction of your brand(s), cross-functional collaborations, and customer engagement efforts. <span class="font-bold text-black">You show a deep understanding of both internal systems and external market dynamics—balancing</span>short-term execution with long-term planning and enterprise thinking.
+        </p>
+        <p class="text-sm text-black mb-2">
+         Importantly, your high level of proficiency across competencies such as Brand and Portfolio Value, Personalized Marketing, and Effective Storytelling suggests <span class="font-bold text-black">you are a key driver of customer-centric strategies.</span> You connect insights to action, craft impactful narratives, and align stakeholders with clarity and influence. Your ability to operate in complexity, handle ambiguity, and bring cross-functional teams together reinforces your positioning as a strategic and collaborative leader.
+        </p>
+        <p class="text-sm text-black mb-2">This level of capability positions you to be a critical enabler of marketing transformation someone who can mentor, scale best practices, and drive innovation across functions.</p>
+    
+    
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
       <!-- Skills Assessment -->
-      <div class="bg-white p-6 rounded-lg shadow-md md:col-span-8 col-span-12">
+      <div class="bg-white p-6 rounded-lg shadow-md md:col-span-12 col-span-12">
         <div class="flex justify-between items-center mb-2 flex-wrap gap-2">
           <h3 class="text-2xl text-[#1d1d34]  font-bold">OVERALL COMPETENCY VIEW</h3>
           <div class="relative flex bg-gray-200 rounded-full p-1 w-max">
@@ -101,21 +115,7 @@
       </div>
 
       <!-- Performance Summary -->
-      <div class="bg-white p-6 rounded-lg shadow-md md:col-span-4 col-span-12">
-        <h3 class="text-2xl text-[#1d1d34] font-bold mb-4 text-left">OVERALL SUMMARY</h3>
-        <p class="text-sm text-gray-300 mb-2">
-          You are <span class="font-bold text-gray-300">demonstrating a high level of proficiency across key marketing competencies</span> and are operating at an advanced level in many areas. This reflects your ability to apply advanced marketing practices effectively, contribute to broader strategic discussions, and support ABC Pharma’s business objectives. You are also well positioned to guide others and share your expertise to enhance team capabilities.
-        </p>
-        <p class="text-sm text-gray-300 mb-2">
-         Your ratings suggest that you are not just executing tasks effectively, but also shaping the strategic direction of your brand(s), cross-functional collaborations, and customer engagement efforts. <span class="font-bold text-gray-300">You show a deep understanding of both internal systems and external market dynamics—balancing</span>short-term execution with long-term planning and enterprise thinking.
-        </p>
-        <p class="text-sm text-gray-300 mb-2">
-         Importantly, your high level of proficiency across competencies such as Brand and Portfolio Value, Personalized Marketing, and Effective Storytelling suggests <span class="font-bold text-gray-300">you are a key driver of customer-centric strategies.</span> You connect insights to action, craft impactful narratives, and align stakeholders with clarity and influence. Your ability to operate in complexity, handle ambiguity, and bring cross-functional teams together reinforces your positioning as a strategic and collaborative leader.
-        </p>
-        <p class="text-sm text-gray-300 mb-2">This level of capability positions you to be a critical enabler of marketing transformation someone who can mentor, scale best practices, and drive innovation across functions.</p>
-    
-    
-    </div>
+      
     </div>
 
     <!-- Accordions -->
@@ -140,9 +140,9 @@
         <div id="accordion-content-development" class="mt-4 space-y-4 transition-all duration-300 ease-in-out"></div>
       </div>
     </div>
-
+</div>
     <!-- learining -->
-      <div class="mx-auto bg-white p-6 mt-5 rounded-lg shadow">
+      <div class="mx-auto bg-white p-6 mt-5 rounded-lg shadow hidden" id="learning-recommendations">
     <div class="flex justify-between items-center mb-1">
       <h1 class="text-2xl font-bold text-[#1d1d34]">Your Learning Recommendations</h1>
       <button class="bg-[#1d1d34] text-white px-4 py-2 rounded hover:bg-blue-800 hidden">Select Team member</button>
@@ -261,7 +261,7 @@
       </div>
     </div>
   </div>
-    </div>
+   
     <div id="detailed-view" class="hidden"> 
      <div class="max-w-full mx-auto">
     <h2 class="text-2xl text-[#1d1d34] font-bold mb-6">Detailed Competency Overview</h2>
@@ -380,7 +380,7 @@
               </template>
             </div>
             <h4 class="font-semibold text-gray-700 mt-4 mb-2">Competency Feedback</h4>
-            <p class="text-gray-300 mb-6" x-text="item.narrative"></p>
+            <p class="text-black mb-6" x-text="item.narrative"></p>
           </div>
         </div>
       </template>
@@ -548,7 +548,7 @@
         const div = document.createElement("div");
         div.className = "bg-blue-50 border-l-4 border-[#1d1d34] p-4 rounded relative";
         div.innerHTML = `<div class="flex justify-between items-center mb-1"><span class="font-medium text-[#1d1d34]">${item.title}</span></div>
-          <p class="text-sm text-gray-300">${item.description}</p>`;
+          <p class="text-sm text-black">${item.description}</p>`;
         container.appendChild(div);
       });
     }
@@ -559,34 +559,56 @@
       content.classList.toggle("hidden");
       arrow.classList.toggle("rotate-180");
     };
+
 function switchView(view) {
   const competencyView = document.getElementById("competency-view");
   const detailedView = document.getElementById("detailed-view");
+  const learningView = document.getElementById("learning-recommendations");
+
   const CompetencyBtn = document.getElementById("CompetencyBtn");
   const DetailedBtn = document.getElementById("DetailedBtn");
-  const viewSlider = document.getElementById("view-slider");
-const legendBox = document.getElementById("legends");
+  const DevelopmentPagebtn = document.getElementById("DevelopmentPagebtn");
 
-console.log("the legend is this ",legendBox);
-  if (view === 'competency') {
+  const legendBox = document.getElementById("legends");
+
+  // reset all buttons
+  [CompetencyBtn, DetailedBtn, DevelopmentPagebtn].forEach(btn => {
+    btn?.classList.remove("border-b-2", "border-[#EC7200]", "text-[#EC7200]");
+    btn?.classList.add("text-gray-600", "border-transparent");
+  });
+
+  if (view === "competency") {
     competencyView?.classList.remove("hidden");
     detailedView?.classList.add("hidden");
-     CompetencyBtn?.classList.add("text-white");
- DetailedBtn?.classList.remove("text-white")
-      legendBox.classList.remove("hidden");
-    viewSlider.style.left = '0.25rem';  // same as left-1
-  } else if (view === 'detailed') {
-     legendBox.classList.add("hidden"); 
+    learningView?.classList.add("hidden");
+
+    CompetencyBtn?.classList.add("border-b-2", "border-[#EC7200]", "text-[#EC7200]");
+    CompetencyBtn?.classList.remove("text-gray-600", "border-transparent");
+
+    legendBox?.classList.remove("hidden");
+  } 
+  else if (view === "detailed") {
     competencyView?.classList.add("hidden");
-    CompetencyBtn?.classList.remove("text-white");
-    CompetencyBtn?.classList.add("text-black");
-    DetailedBtn?.classList.add("text-white")
     detailedView?.classList.remove("hidden");
-    viewSlider.style.left = '49%';
-   
-legendBox.classList.add("hidden");
+    learningView?.classList.add("hidden");
+
+    DetailedBtn?.classList.add("border-b-2", "border-[#EC7200]", "text-[#EC7200]");
+    DetailedBtn?.classList.remove("text-gray-600", "border-transparent");
+
+    legendBox?.classList.add("hidden");
+  } 
+  else if (view === "development") {
+    competencyView?.classList.add("hidden");
+    detailedView?.classList.add("hidden");
+    learningView?.classList.remove("hidden");
+
+    DevelopmentPagebtn?.classList.add("border-b-2", "border-[#EC7200]", "text-[#EC7200]");
+    DevelopmentPagebtn?.classList.remove("text-gray-600", "border-transparent");
+
+    legendBox?.classList.add("hidden");
   }
 }
+
 
 
     renderCards(strengths, "accordion-content-strengths");
