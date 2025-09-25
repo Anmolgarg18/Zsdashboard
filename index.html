@@ -291,7 +291,7 @@
         {logo: './images/Brandport.png',
           title: 'Strategic Account Planning',
           score: '2.17/3',
-          narrative: `You develop compelling, cohesive brand narratives and guide portfolio-level strategy. Your strategic clarity and cross-brand vision ensure sustainable success in a competitive market.`,
+          narrative: 'You have shown the ability to create structured account plans that reflect both client priorities and organizational goals. Your foresight in anticipating client needs and identifying risks or opportunities adds significant value to long-term planning. Breaking down larger objectives into actionable steps helps maintain focus and ensures smoother execution. To elevate your impact further, embedding clearer milestones and measurable outcomes will ensure progress can be tracked and adjusted with greater precision. </br> You demonstrate strong capability in building trust with key stakeholders, often serving as a reliable and approachable partner for clients. Your ability to listen and adapt your communication style helps you connect well with diverse personalities and navigate complex situations. You engage effectively with day-to-day contacts and ensure responsiveness, which reinforces client confidence. Moving forward, placing greater emphasis on deepening executive-level engagement will strengthen your influence and alignment at the most strategic level',
           subcompetencies: [
             { title: 'Account Insight & Analysis', score: '2/3', self: '2/3', manager: '2/3', selfWidth: '66%', managerWidth: '66%' },
             { title: 'Opportunity Identification', score: '2/3', self: '1/3', manager: '3/3', selfWidth: '33%', managerWidth: '100%' },
@@ -379,7 +379,9 @@
               </template>
             </div>
             <h4 class="font-semibold text-gray-700 mt-4 mb-2">Competency Feedback</h4>
-            <p class="text-black mb-6" x-text="item.narrative"></p>
+            <p class="text-black mb-6 whitespace-pre-line"
+   x-text="item.narrative.replace(/<\/br>/gi, '\n')"></p>
+
           </div>
         </div>
       </template>
